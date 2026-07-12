@@ -63,8 +63,10 @@ pytest tests/ -v
 
 - [x] **Task 1** — Workflow definition, event data compilation, assumptions &
   limitations, initial EDA (`docs/`, `data/key_events.csv`, `notebooks/eda.ipynb`)
-- [ ] **Task 2** — Bayesian change point modeling with PyMC, quantified
-  impact statements, event association
+- [x] **Task 2** — Bayesian change point modeling with PyMC (full-series model
+  + multiple-change-point extension + two focused case studies), quantified
+  impact statements, event association (`notebooks/change_point_model.ipynb`,
+  `docs/task2_findings.md`)
 - [ ] **Task 3** — Flask backend + React dashboard
 
 ## Key Caveat
