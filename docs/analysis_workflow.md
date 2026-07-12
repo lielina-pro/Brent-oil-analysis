@@ -1,7 +1,7 @@
 # Analysis Workflow: Change Point Analysis of Brent Oil Prices
 
 **Project:** Birhan Energies — Brent Oil Price Change Point Analysis
-**Author:** lielina fekadu
+**Author:** [Your Name]
 **Date:** July 2026
 
 ## 1. Business Objective
