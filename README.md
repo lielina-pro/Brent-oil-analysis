@@ -17,24 +17,37 @@ challenge).
 ├── requirements.txt
 ├── README.md
 ├── data/
-│   ├── BrentOilPrices.csv      # raw daily Brent prices (1987-2022)
-│   └── key_events.csv          # researched major oil-market events
+│   ├── BrentOilPrices.csv        # raw daily Brent prices (1987-2022)
+│   ├── brent_prices_cleaned.csv  # cleaned/parsed output of scripts/data_loader.py
+│   └── key_events.csv            # researched major oil-market events
 ├── docs/
 │   ├── analysis_workflow.md
-│   └── assumptions_and_limitations.md
+│   ├── assumptions_and_limitations.md
+│   ├── task2_findings.md
+│   ├── Brent_Oil_Interim_Report.docx
+│   └── screenshots/               # dashboard screenshots (Task 3)
 ├── src/
 │   └── __init__.py
 ├── notebooks/
 │   ├── __init__.py
 │   ├── README.md
-│   └── eda.ipynb
+│   ├── eda.ipynb                  # Task 1 EDA
+│   └── change_point_model.ipynb   # Task 2 Bayesian change point modeling
 ├── tests/
 │   ├── __init__.py
 │   └── test_data_loader.py
-└── scripts/
-    ├── __init__.py
-    ├── README.md
-    └── data_loader.py
+├── scripts/
+│   ├── __init__.py
+│   ├── README.md
+│   └── data_loader.py
+├── backend/                       # Task 3 — Flask API (see backend/README.md)
+│   ├── app.py
+│   ├── data_utils.py
+│   ├── data/changepoint_results.json
+│   └── routes/{prices,events,changepoints}.py
+└── frontend/                      # Task 3 — React dashboard (see frontend/README.md)
+    ├── src/
+    └── package.json
 ```
 
 ## Setup
@@ -47,11 +60,24 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the EDA / change point analysis notebook:
+Run the analysis notebooks:
 
 ```bash
 jupyter notebook notebooks/eda.ipynb
+jupyter notebook notebooks/change_point_model.ipynb
 ```
+
+Run the dashboard (two terminals):
+
+```bash
+# Terminal 1 — backend
+cd backend && python app.py
+
+# Terminal 2 — frontend
+cd frontend && npm install && npm run dev
+```
+
+Then open `http://localhost:5173`.
 
 Run tests:
 
@@ -67,7 +93,12 @@ pytest tests/ -v
   + multiple-change-point extension + two focused case studies), quantified
   impact statements, event association (`notebooks/change_point_model.ipynb`,
   `docs/task2_findings.md`)
-- [ ] **Task 3** — Flask backend + React dashboard
+- [x] **Task 3** — Flask backend + React dashboard (`backend/`, `frontend/`,
+  screenshots in `docs/screenshots/`)
+
+## Dashboard Preview
+
+![Dashboard desktop view](docs/screenshots/dashboard_desktop.png)
 
 ## Key Caveat
 
