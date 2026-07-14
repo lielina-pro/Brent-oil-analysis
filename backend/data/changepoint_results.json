@@ -1,0 +1,94 @@
+{
+  "full_series_model": {
+    "description": "Mandatory single change point model fit over the entire 1987-2022 price history.",
+    "window": {
+      "start": "1987-05-20",
+      "end": "2022-11-14"
+    },
+    "change_point_date": "2005-02-22",
+    "credible_interval_90": {
+      "lower": "2005-02-16",
+      "upper": "2005-03-02"
+    },
+    "mean_before": 21.42,
+    "mean_after": 75.6,
+    "pct_change": 253.0,
+    "probability_increase": 1.0,
+    "matched_event": null,
+    "interpretation": "No single event matches this date closely. This reflects a broad multi-year regime shift (the 2000s commodity supercycle) rather than a discrete trigger, illustrating the limitation of fitting one change point across 35 years containing many real shocks."
+  },
+  "pelt_breakpoints": [
+    {
+      "date": "2004-07-26",
+      "mean_price_after": 69.46,
+      "pct_change_vs_prev": null,
+      "matched_event": null
+    },
+    {
+      "date": "2010-12-06",
+      "mean_price_after": 108.8,
+      "pct_change_vs_prev": 56.64,
+      "matched_event": "Arab Spring / Libyan Civil War",
+      "matched_event_date": "2011-02-15"
+    },
+    {
+      "date": "2014-10-31",
+      "mean_price_after": 56.34,
+      "pct_change_vs_prev": -48.22,
+      "matched_event": null
+    },
+    {
+      "date": "2021-09-21",
+      "mean_price_after": 97.52,
+      "pct_change_vs_prev": 73.09,
+      "matched_event": null
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "covid_price_war_2020",
+      "title": "COVID-19 Demand Shock & Saudi-Russia Price War",
+      "window": {
+        "start": "2019-11-01",
+        "end": "2020-06-01"
+      },
+      "change_point_date": "2020-03-06",
+      "mean_before": 62.05,
+      "mean_after": 25.03,
+      "pct_change": -59.7,
+      "probability_direction": 1.0,
+      "direction": "decrease",
+      "matched_events": [
+        {
+          "name": "Saudi-Russia Oil Price War",
+          "date": "2020-03-08"
+        },
+        {
+          "name": "COVID-19 Declared a Global Pandemic",
+          "date": "2020-03-11"
+        }
+      ]
+    },
+    {
+      "id": "russia_ukraine_2022",
+      "title": "Russian Invasion of Ukraine",
+      "window": {
+        "start": "2021-11-01",
+        "end": "2022-06-01"
+      },
+      "change_point_date": "2022-02-03",
+      "mean_before": 81.46,
+      "mean_after": 109.57,
+      "pct_change": 34.5,
+      "probability_direction": 1.0,
+      "direction": "increase",
+      "matched_events": [
+        {
+          "name": "Russian Invasion of Ukraine",
+          "date": "2022-02-24"
+        }
+      ],
+      "note": "Change point precedes the invasion date by about 3 weeks, consistent with markets pricing in anticipated risk from troop buildups and diplomatic tensions reported in January 2022."
+    }
+  ]
+}
